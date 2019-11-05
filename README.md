@@ -4,14 +4,14 @@ Automatically detect all interfaces and sends UDP discover to search new NETIO d
 
 
 
-##Requirements
+## Requirements
 - Linux
 - pypi netifaces
 - Python 2.7
 
 tested for IPv4 and Ubuntu 18.04
 
-##Usage:
+## Usage:
 - NetioDiscover.py - the main class with discover
 - discover.py - example script
 
