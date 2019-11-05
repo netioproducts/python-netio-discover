@@ -77,7 +77,7 @@ class NetioDiscover:
                 device['fwversion'] = ''.join(chr(i) for i in item.get('DATA'))
                 continue
             if item.get('FTYPE') == 0x02:   #MAC
-                device['mac'] = ':'.join(format(i, 'x') for i in item.get('DATA')).upper()
+                device['mac'] = ':'.join(format(i, '02x') for i in item.get('DATA')).upper()
                 continue
             if item.get('FTYPE') == 0x03:   #IP
                 device['ip'] = '.'.join(str(i) for i in item.get('DATA'))
