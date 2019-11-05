@@ -37,6 +37,7 @@ class NetioDiscover:
             except:
                 continue
 
+        outsocket.close()
 
         return self.devices
 
