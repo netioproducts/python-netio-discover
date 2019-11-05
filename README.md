@@ -21,5 +21,7 @@ Interfaces can be specified in list of interface names in object constructor. `d
  
 By default it scans all found interfaces. `discovery = NetioDiscover()`
 
+ `NetioDiscover.getDevicesLinux()` returns list of found devices
+
 has to be run with sudo privileges due to work with broadcast on network interfaces
 
