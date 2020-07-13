@@ -1,4 +1,5 @@
 import netifaces
+import sys
 from socket import *
 
 class NetioDiscover:
@@ -27,7 +28,10 @@ class NetioDiscover:
             try:
                 print("sending to: %s" % keys)
                 outsocket.setsockopt(SOL_SOCKET, 25, str(keys + '\0').encode('utf-8'))  # this is used to send and receive on all interfaces - need root privileges
-                outsocket.sendto("01ec00".decode("hex"), ('255.255.255.255', 62387))
+                if sys.version_info[0] < 3:
+                    outsocket.sendto("01ec00".decode("hex"), ('255.255.255.255', 62387))
+                else:
+                    outsocket.sendto(bytes.fromhex("01ec00"), ('255.255.255.255', 62387))
             except:
                 print('Unable to send request')
 

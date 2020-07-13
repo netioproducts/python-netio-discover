@@ -1,6 +1,7 @@
 from NetioDiscover import NetioDiscover
+import pprint
+discovery = NetioDiscover()
+pp = pprint.PrettyPrinter(indent=2)
 
-discovery = NetioDiscover(["enp0s25", "wlp2s0"])
-
-print(discovery.getDevicesLinux())
+pp.pprint(discovery.getDevicesLinux())
 
